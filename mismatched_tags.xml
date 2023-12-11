@@ -1,0 +1,7 @@
+<root>
+	<folder name="Music">
+		<file name="Song.mp3">
+			</tile>
+			<!-- Mismatched closing tag -->
+		</folder>
+</root>

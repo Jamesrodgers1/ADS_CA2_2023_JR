@@ -11,8 +11,8 @@ using namespace tinyxml2;
 class TreeNode {
 public:
     std::string name;
-    bool isFolder; // Flag to identify if it's a folder
-    std::vector<TreeNode*> children; // List of children for a folder
+    bool isFolder; 
+    std::vector<TreeNode*> children; 
 
     TreeNode(std::string name, bool folder) : name(name), isFolder(folder) {}
 

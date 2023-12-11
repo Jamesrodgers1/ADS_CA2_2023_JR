@@ -1,0 +1,5 @@
+<root>
+	<folder name="Documents">
+		<file name="Report.pdf" />
+		<!-- Missing closing tag for folder -->
+	</root>

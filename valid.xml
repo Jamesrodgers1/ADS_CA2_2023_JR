@@ -1,0 +1,10 @@
+<root>
+	<folder name="Documents">
+		<file name="Resume.docx" />
+		<file name="CoverLetter.docx" />
+	</folder>
+	<folder name="Pictures">
+		<file name="Vacation.jpg" />
+		<file name="ProfilePic.jpg" />
+	</folder>
+</root>
