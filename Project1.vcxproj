@@ -129,7 +129,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Ads_CA2_Tree.cpp" />
-    <ClCompile Include="test.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="tinyxml2.cpp" />
   </ItemGroup>
   <ItemGroup>

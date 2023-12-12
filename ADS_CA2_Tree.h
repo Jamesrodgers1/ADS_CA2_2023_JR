@@ -1,10 +1,12 @@
+
 #ifndef ADS_CA2_TREE_H
 #define ADS_CA2_TREE_H
 
 #include <string>
 #include <vector>
-#include "tinyxml2.h"
 #include <stack>
+#include "tinyxml2.h"
+
 
 class TreeNode {
 public:
@@ -12,7 +14,7 @@ public:
     bool isFolder;
     std::vector<TreeNode*> children;
 
-    TreeNode(std::string name, bool folder);
+    TreeNode(const std::string& name, bool folder);
     ~TreeNode();
 };
 
@@ -20,7 +22,7 @@ class FileTree {
 private:
     TreeNode* root;
 
-    TreeNode* findNode(TreeNode* node, const std::string& name); 
+    TreeNode* findNode(TreeNode* node, const std::string& name);
     void display(TreeNode* node, int level = 0);
 
 public:
@@ -31,12 +33,8 @@ public:
     void listAll(TreeNode* node, int level = 0);
     TreeNode* search(TreeNode* node, const std::string& name);
     void displayTree();
-    
 };
 
 bool validateAndParseXML(tinyxml2::XMLElement* element, TreeNode* parentNode, FileTree& fileTree, std::stack<std::string>& tags);
 
-
-bool runTests();
-
-#endif // ADS_CA2_TREE_H
+#endif 
