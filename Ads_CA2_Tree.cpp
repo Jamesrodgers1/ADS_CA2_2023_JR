@@ -11,7 +11,7 @@ TreeNode::~TreeNode() {
 }
 
 // FileTree functions
-FileTree::FileTree(TreeNode* rootNode) : root(rootNode) {
+FileTree::FileTree(TreeNode* rootNode) : root() {
     // Constructor logic
 }
 
