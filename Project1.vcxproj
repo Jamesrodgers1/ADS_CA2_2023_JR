@@ -130,6 +130,21 @@
   <ItemGroup>
     <ClCompile Include="Ads_CA2_Tree.cpp" />
     <ClCompile Include="test.cpp" />
+    <ClCompile Include="tinyxml2.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ADS_CA2_Tree.h" />
+    <ClInclude Include="tinyxml2.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="mismatched_tags.xml" />
+    <Xml Include="missing_closing_tag.xml" />
+    <Xml Include="valid.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CppProperties.json" />
+    <None Include="Makefile" />
+    <None Include="README.md" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

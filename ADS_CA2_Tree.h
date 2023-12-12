@@ -36,4 +36,7 @@ public:
 
 bool validateAndParseXML(tinyxml2::XMLElement* element, TreeNode* parentNode, FileTree& fileTree, std::stack<std::string>& tags);
 
+
+bool runTests();
+
 #endif // ADS_CA2_TREE_H

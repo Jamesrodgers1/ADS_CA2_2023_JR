@@ -4,7 +4,7 @@
 #include "tinyxml2.h"
 #include <stack>
 #include "ADS_CA2_Tree.h"
-#include "test.cpp"
+
 
 using namespace std;
 using namespace tinyxml2;
@@ -106,82 +106,11 @@ bool validateAndParseXML(XMLElement* element, TreeNode* parentNode, FileTree& fi
             tags.pop();
         }
         else {
-            // This is a file (no children)
+            
             fileTree.addNode(parentNode->name, name, false);
         }
 
         element = element->NextSiblingElement();
     }
     return true; // Successfully validated and parsed
-}
-
-
-int main() {
-
-        if (!runTests()) {
-            cerr << "Tests failed. Exiting." << endl;
-            return -1;
-        }
-
-    XMLDocument doc;
-    doc.LoadFile("data.xml");
-
-    if (doc.Error()) {
-        cout << "Error loading XML file." << endl;
-        return -1;
-    }
-
-    TreeNode* root = new TreeNode("root", true);
-    FileTree fileTree(root);
-    stack<string> tags;
-
-    if (validateAndParseXML(doc.FirstChildElement(), root, fileTree, tags)) {
-        if (!tags.empty()) {
-            cout << "Invalid XML: Missing closing tags." << endl;
-        }
-        else {
-            TreeNode* found = nullptr;  // Declare 'found' outside the switch
-            int choice;
-            do {
-                cout << "1. List All Files/Folders" << endl;
-                cout << "2. Search" << endl;
-                cout << "3. Exit" << endl;
-                cout << "Enter choice: ";
-                cin >> choice;
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
-
-                string searchQuery;
-                switch (choice) {
-                case 1:
-                    fileTree.listAll(root);
-                    break;
-                case 2:
-                    cout << "Enter name to search for: ";
-                    getline(cin, searchQuery);
-                    found = fileTree.search(root, searchQuery);  // Assign to 'found'
-                    if (found) {
-                        cout << "Found: " << found->name << endl;
-                    }
-                    else {
-                        cout << "Not found." << endl;
-                    }
-                    break;
-                case 3:
-                    cout << "Exiting." << endl;
-                    break;
-                default:
-                    cout << "Invalid choice." << endl;
-                    break;
-                }
-            } while (choice != 3);
-        }
-    }
-    else {
-        cout << "Invalid XML structure." << endl;
-    }
-
-    // Clean up dynamically allocated memory.
-    delete root;
-
-    return 0;
 }
