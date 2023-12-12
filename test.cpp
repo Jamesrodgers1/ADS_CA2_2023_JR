@@ -4,7 +4,7 @@
 #include <stack>
 #include <cassert>
 #include "tinyxml2.h"
-#include "ADS_CA2_Tree.cpp"
+#include "ADS_CA2_Tree.h"
 
 using namespace std;
 using namespace tinyxml2;
@@ -13,14 +13,14 @@ void test_validXML();
 void test_invalidXML_missingClosingTag();
 void test_invalidXML_mismatchedTags();
 
-int main() {
+bool runTests() {
     test_validXML();
     test_invalidXML_missingClosingTag();
     test_invalidXML_mismatchedTags();
     
 
     cout << "All tests passed successfully." << endl;
-    return 0;
+    return true;
 }
 
 void test_validXML() {
